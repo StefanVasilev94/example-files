@@ -1,0 +1,145 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: products-api
+  description: api for adding, updating and retrieving products.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-product-management
+  system: product-catalog
+  definition: |
+openapi: 3.0.0
+info:
+  title: product information api
+  version: 1.0.0
+  description: api for retrieving and updating product information
+servers:
+  - url: http://localhost:8000
+paths:
+  /products:
+    get:
+      summary: retrieve a list of all products
+      description: returns a list of all products in the catalog.
+      responses:
+        200:
+          description: a list of products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: the unique identifier for the product.
+                    name:
+                      type: string
+                      description: the name of the product.
+                    description:
+                      type: string
+                      description: a description of the product.
+                    price:
+                      type: number
+                      description: the price of the product.
+                    quantity:
+                      type: integer
+                      description: the current quantity of the product in stock.
+    post:
+      summary: add a new product to the catalog
+      description: creates a new product in the catalog.
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: the name of the product.
+                description:
+                  type: string
+                  description: a description of the product.
+                price:
+                  type: number
+                  description: the price of the product.
+                quantity:
+                  type: integer
+                  description: the initial quantity of the product in stock.
+      responses:
+        201:
+          description: the newly created product.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: the unique identifier for the product.
+                  name:
+                    type: string
+                    description: the name of the product.
+                  description:
+                    type: string
+                    description: a description of the product.
+                  price:
+                    type: number
+                    description: the price of the product.
+                  quantity:
+                    type: integer
+                    description: the current quantity of the product in stock.
+  /products/{product_id}:
+    parameters:
+      - in: path
+        name: product_id
+        schema:
+          type: integer
+        required: true
+        description: the id of the product to retrieve or update.
+    get:
+      summary: retrieve a single product
+      description: returns information about a single product.
+      responses:
+        200:
+          description: information about the product.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: the unique identifier for the product.
+                  name:
+                    type: string
+                    description: the name of the product.
+                  description:
+                    type: string
+                    description: a description of the product.
+                  price:
+                    type: number
+                    description: the price of the product.
+                  quantity:
+                    type: integer
+                    description: the current quantity of the product in stock.
+    put:
+      summary: update a single product
+      description: updates the information for a single product.
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: the name of the product.
+                description:
+                  type

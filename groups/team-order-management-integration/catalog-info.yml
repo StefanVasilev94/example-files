@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-order-management-integration
+  description: responsible for integrating order management
+spec:
+  type: team
+
+  parent: team-frontend
+  children: []
+  members: [IsabellaWong1, DanielLiu1]

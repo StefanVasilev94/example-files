@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: sophiemendoza1
+spec:
+  profile:
+    displayname: sophie mendoza
+    email: sophie_mendoza1@example.com
+    picture: https://i.pravatar.cc/150?img=16
+
+  memberOf: [team-customer-data-management]

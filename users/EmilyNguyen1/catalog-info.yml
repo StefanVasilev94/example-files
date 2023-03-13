@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: emilynguyen1
+spec:
+  profile:
+    displayname: emily nguyen
+    email: emily_nguyen1@example.com
+    picture: https://i.pravatar.cc/150?img=7
+
+  memberOf: [team-order-fulfillment]

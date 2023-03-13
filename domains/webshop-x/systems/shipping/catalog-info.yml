@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: shipping
+  description: a system for managing shipping and delivery.
+spec:
+  owner: team-shipping
+  domain: <domain>

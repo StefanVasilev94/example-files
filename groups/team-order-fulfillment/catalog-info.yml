@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-order-fulfillment
+  description: responsible for order fulfillment
+spec:
+  type: team
+
+  parent: team-order-management
+  children: []
+  members: [AlexSmith1, EmilyNguyen1, WilliamJones1, AveryDavis1, OliviaGarcia1]

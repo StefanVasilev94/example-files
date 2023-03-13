@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: miachen1
+spec:
+  profile:
+    displayname: mia chen
+    email: mia_chen1@example.com
+    picture: https://i.pravatar.cc/150?img=23
+
+  memberOf: [team-shipping-mangement]

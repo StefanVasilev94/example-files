@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-order-management
+  description: responsible for order management
+spec:
+  type: team
+
+  parent: team-webshop-x
+  children: [team-order-processing, team-order-fulfillment]

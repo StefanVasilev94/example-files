@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: sofiagonzalez1
+spec:
+  profile:
+    displayname: sofia gonzalez
+    email: sofia_gonzalez1@example.com
+    picture: https://i.pravatar.cc/150?img=27
+
+  memberOf: [team-frontend-customers]

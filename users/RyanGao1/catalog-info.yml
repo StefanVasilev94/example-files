@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ryangao1
+spec:
+  profile:
+    displayname: ryan gao
+    email: ryan_gao1@example.com
+    picture: https://i.pravatar.cc/150?img=34
+
+  memberOf: [team-shipping-integration]

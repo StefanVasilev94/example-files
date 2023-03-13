@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shipping-integration
+  description: the component responsible for integrating with the shipping system.
+
+   
+
+
+spec:
+  type: service
+  system: frontend
+  lifecycle: production
+  owner: team-shipping-integration
+  dependsOn:
+    <dependsOn>
+  providesApis:
+    - shippings-api

@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: customer-data-management
+  description: the component responsible for managing customer data.
+
+   
+
+
+spec:
+  type: service
+  system: customer-management
+  lifecycle: production
+  owner: team-customer-data-management
+  dependsOn:
+    - resource:default/customers-db
+
+  providesApis:
+    - customers-api

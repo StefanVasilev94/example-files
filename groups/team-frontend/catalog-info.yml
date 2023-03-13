@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-frontend
+  description: responsible for the frontend
+spec:
+  type: team
+
+  parent: team-webshop-x
+  children: [team-frontend-customers, team-order-management-integration, team-customer-mangement-integration, team-shipping-integration]

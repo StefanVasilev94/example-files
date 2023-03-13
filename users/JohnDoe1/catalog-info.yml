@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: johndoe1
+spec:
+  profile:
+    displayname: john doe
+    email: john_doe1@example.com
+    picture: https://i.pravatar.cc/150?img=1
+
+  memberOf: [team-order-processing]

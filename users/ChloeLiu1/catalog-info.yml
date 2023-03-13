@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: chloeliu1
+spec:
+  profile:
+    displayname: chloe liu
+    email: chloe_liu1@example.com
+    picture: https://i.pravatar.cc/150?img=35
+
+  memberOf: [team-shipping-integration]

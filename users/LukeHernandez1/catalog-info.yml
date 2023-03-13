@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: lukehernandez1
+spec:
+  profile:
+    displayname: luke hernandez
+    email: luke_hernandez1@example.com
+    picture: https://i.pravatar.cc/150?img=24
+
+  memberOf: [team-shipping-mangement]

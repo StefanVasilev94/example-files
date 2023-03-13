@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: isabellawong1
+spec:
+  profile:
+    displayname: isabella wong
+    email: isabella_wong1@example.com
+    picture: https://i.pravatar.cc/150?img=29
+
+  memberOf: [team-order-management-integration]

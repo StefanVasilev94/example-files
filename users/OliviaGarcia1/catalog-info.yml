@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: oliviagarcia1
+spec:
+  profile:
+    displayname: olivia garcia
+    email: olivia_garcia1@example.com
+    picture: https://i.pravatar.cc/150?img=10
+
+  memberOf: [team-order-fulfillment]

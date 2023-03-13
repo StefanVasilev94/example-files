@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: averydavis1
+spec:
+  profile:
+    displayname: avery davis
+    email: avery_davis1@example.com
+    picture: https://i.pravatar.cc/150?img=9
+
+  memberOf: [team-order-fulfillment]

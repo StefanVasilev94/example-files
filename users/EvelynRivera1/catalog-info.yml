@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: evelynrivera1
+spec:
+  profile:
+    displayname: evelyn rivera
+    email: evelyn_rivera1@example.com
+    picture: https://i.pravatar.cc/150?img=33
+
+  memberOf: [team-customer-mangement-integration]

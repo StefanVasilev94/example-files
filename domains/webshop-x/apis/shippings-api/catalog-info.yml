@@ -1,0 +1,115 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: shippings-api
+  description: api for managing shipping and delivery.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-shipping-mangement
+  system: shipping
+  definition: |
+openapi: 3.0.0
+info:
+  title: simple shipping api
+  version: 1.0.0
+  description: a simple api for shipping orders
+
+paths:
+  /shipments:
+    get:
+      summary: retrieve a list of shipments
+      operationid: getshipments
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/shipment'
+        '404':
+          description: not found
+
+    post:
+      summary: create a new shipment
+      operationid: createshipment
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipmentinput'
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipment'
+        '400':
+          description: bad request
+
+components:
+  schemas:
+    shipment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        order_id:
+          type: integer
+          format: int64
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+          required:
+            - street
+            - city
+            - state
+            - zip
+        tracking_number:
+          type: string
+      required:
+        - id
+        - order_id
+        - address
+
+    shipmentinput:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          format: int64
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+          required:
+            - street
+            - city
+            - state
+            - zip
+      required:
+        - order_id
+        - address

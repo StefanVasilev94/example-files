@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: frontend
+  description: gui for interation
+spec:
+  owner: team-frontend
+  domain: <domain>

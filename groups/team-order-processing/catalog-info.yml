@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-order-processing
+  description: responsible for order processing
+spec:
+  type: team
+
+  parent: team-order-management
+  children: []
+  members: [JohnDoe1, JaneSmith1, MikeJohnson1, SamanthaBrown1, DavidLee1]

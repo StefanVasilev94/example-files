@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: gracewong1
+spec:
+  profile:
+    displayname: grace wong
+    email: grace_wong1@example.com
+    picture: https://i.pravatar.cc/150?img=14
+
+  memberOf: [team-product-management]

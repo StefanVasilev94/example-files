@@ -1,0 +1,135 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: payment-gateway-api
+  description: api for processing payments.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-order-processing
+  system: order-management
+  definition: |
+openapi: 3.0.0
+info:
+  title: simple payment gateway api
+  version: 1.0.0
+  description: a simple api for processing payments
+
+paths:
+  /payments:
+    post:
+      summary: create a new payment
+      operationid: createpayment
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/paymentinput'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/payment'
+        '400':
+          description: bad request
+
+  /payments/{paymentid}:
+    get:
+      summary: retrieve a payment by id
+      operationid: getpaymentbyid
+      parameters:
+        - name: paymentid
+          in: path
+          description: id of the payment to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/payment'
+        '404':
+          description: not found
+
+components:
+  schemas:
+    payment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        amount:
+          type: number
+          format: float
+        currency:
+          type: string
+        status:
+          type: string
+          enum: [pending, succeeded, failed]
+      required:
+        - id
+        - amount
+        - currency
+        - status
+
+    paymentinput:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: float
+        currency:
+          type: string
+        payment_method:
+          type: string
+          enum: [credit_card, paypal]
+          description: payment method to use
+        credit_card:
+          $ref: '#/components/schemas/creditcardinput'
+        paypal:
+          $ref: '#/components/schemas/paypalinput'
+      required:
+        - amount
+        - currency
+        - payment_method
+
+    creditcardinput:
+      type: object
+      properties:
+        card_number:
+          type: string
+        expiration_month:
+          type: integer
+          format: int32
+        expiration_year:
+          type: integer
+          format: int32
+        cvv:
+          type: string
+      required:
+        - card_number
+        - expiration_month
+        - expiration_year
+        - cvv
+
+    paypalinput:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - email
+        - password

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-customer-mangement-integration
+  description: responsible for integrating the customer management
+spec:
+  type: team
+
+  parent: team-frontend
+  children: []
+  members: [LucasChen1, AriaKim1, EvelynRivera1]

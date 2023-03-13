@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: samanthabrown1
+spec:
+  profile:
+    displayname: samantha brown
+    email: samantha_brown1@example.com
+    picture: https://i.pravatar.cc/150?img=4
+
+  memberOf: [team-order-processing]

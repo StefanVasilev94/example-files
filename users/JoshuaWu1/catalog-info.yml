@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: joshuawu1
+spec:
+  profile:
+    displayname: joshua wu
+    email: joshua_wu1@example.com
+    picture: https://i.pravatar.cc/150?img=28
+
+  memberOf: [team-frontend-customers]

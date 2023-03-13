@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: order-management-integration
+  description: the component responsible for integrating with the order management system.
+
+   
+
+
+spec:
+  type: service
+  system: frontend
+  lifecycle: production
+  owner: team-order-management-integration
+  dependsOn:
+    <dependsOn>
+  providesApis:
+    - orders-api

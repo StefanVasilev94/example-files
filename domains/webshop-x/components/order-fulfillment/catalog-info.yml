@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: order-fulfillment
+  description: the component responsible for fulfilling orders.
+
+   
+
+
+spec:
+  type: service
+  system: order-management
+  lifecycle: production
+  owner: team-order-fulfillment
+  dependsOn:
+    - resource:default/warehouse-inventory-db
+
+  providesApis:
+    - order-fulfillment-api

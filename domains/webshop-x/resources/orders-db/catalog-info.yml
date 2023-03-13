@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: orders-db
+  description: database for storing order data.
+spec:
+  type: database
+  owner: team-order-processing
+  system: order-management

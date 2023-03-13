@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: lucaschen1
+spec:
+  profile:
+    displayname: lucas chen
+    email: lucas_chen1@example.com
+    picture: https://i.pravatar.cc/150?img=31
+
+  memberOf: [team-customer-mangement-integration]

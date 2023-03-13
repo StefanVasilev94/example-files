@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shipping-management
+  description: the component responsible for managing shipping and delivery.
+
+   
+
+
+spec:
+  type: service
+  system: shipping
+  lifecycle: production
+  owner: team-shipping-mangement
+  dependsOn:
+    - resource:default/shipping-status-db
+
+  providesApis:
+    - shippings-api
+    - shipping-providers-api

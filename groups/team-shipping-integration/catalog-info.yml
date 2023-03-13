@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-shipping-integration
+  description: responsible for integrating shipping
+spec:
+  type: team
+
+  parent: team-frontend
+  children: []
+  members: [RyanGao1, ChloeLiu1, EthanLee1, GraceZhao1]

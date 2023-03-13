@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: samanthakim1
+spec:
+  profile:
+    displayname: samantha kim
+    email: samantha_kim1@example.com
+    picture: https://i.pravatar.cc/150?img=12
+
+  memberOf: [team-product-management]

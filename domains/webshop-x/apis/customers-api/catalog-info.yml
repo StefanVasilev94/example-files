@@ -1,0 +1,156 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: customers-api
+  description: api for managing customer data.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-customer-data-management
+  system: customer-management
+  definition: |
+openapi: 3.0.0
+info:
+  title: simple customers api
+  version: 1.0.0
+  description: a simple api for managing customer data
+
+paths:
+  /customers:
+    get:
+      summary: retrieve a list of customers
+      operationid: getcustomers
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/customer'
+        '404':
+          description: not found
+
+    post:
+      summary: create a new customer
+      operationid: createcustomer
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customerinput'
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer'
+        '400':
+          description: bad request
+
+  /customers/{customerid}:
+    get:
+      summary: retrieve a customer by id
+      operationid: getcustomerbyid
+      parameters:
+        - name: customerid
+          in: path
+          description: id of the customer to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer'
+        '404':
+          description: not found
+
+    delete:
+      summary: delete a customer by id
+      operationid: deletecustomerbyid
+      parameters:
+        - name: customerid
+          in: path
+          description: id of the customer to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: no content
+        '404':
+          description: not found
+
+components:
+  schemas:
+    customer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          pattern: '^[0-9]{10}$'
+        address:
+          type: object
+          properties:
+            line1:
+              type: string
+            line2:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            postal_code:
+              type: string
+      required:
+        - id
+        - name
+        - email
+
+    customerinput:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          pattern: '^[0-9]{10}$'
+        address:
+          type: object
+          properties:
+            line1:
+              type: string
+            line2:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            postal_code:
+              type: string
+      required:
+        - name
+        - email

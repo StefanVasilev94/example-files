@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: lucasgomez1
+spec:
+  profile:
+    displayname: lucas gomez
+    email: lucas_gomez1@example.com
+    picture: https://i.pravatar.cc/150?img=17
+
+  memberOf: [team-customer-data-management]

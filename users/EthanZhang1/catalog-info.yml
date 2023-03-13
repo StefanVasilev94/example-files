@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ethanzhang1
+spec:
+  profile:
+    displayname: ethan zhang
+    email: ethan_zhang1@example.com
+    picture: https://i.pravatar.cc/150?img=25
+
+  memberOf: [team-frontend-customers]

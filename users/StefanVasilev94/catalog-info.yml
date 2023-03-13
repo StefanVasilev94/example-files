@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: stefanvasilev94
+spec:
+  profile:
+    displayname: stefan vasilev
+    email: stefan_vasilev@example.com
+    picture: https://i.pravatar.cc/150?img=44
+
+  memberOf: [team-customer-data-management]

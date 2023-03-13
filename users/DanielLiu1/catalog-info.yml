@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: danielliu1
+spec:
+  profile:
+    displayname: daniel liu
+    email: daniel_liu1@example.com
+    picture: https://i.pravatar.cc/150?img=30
+
+  memberOf: [team-order-management-integration]

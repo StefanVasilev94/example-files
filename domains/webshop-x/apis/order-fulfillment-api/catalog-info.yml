@@ -1,0 +1,131 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: order-fulfillment-api
+  description: api for managing order fulfillment.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-order-fulfillment
+  system: order-management
+  definition: |
+openapi: 3.0.0
+info:
+  title: simple order fulfillment api
+  version: 1.0.0
+  description: a simple api for order fulfillment
+
+paths:
+  /orders:
+    get:
+      summary: retrieve a list of orders
+      operationid: getorders
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/order'
+        '404':
+          description: not found
+
+    post:
+      summary: create a new order
+      operationid: createorder
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/orderinput'
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order'
+        '400':
+          description: bad request
+
+  /orders/{orderid}:
+    get:
+      summary: retrieve an order by id
+      operationid: getorderbyid
+      parameters:
+        - name: orderid
+          in: path
+          description: id of the order to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order'
+        '404':
+          description: not found
+
+components:
+  schemas:
+    order:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        customer_id:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              product_id:
+                type: integer
+                format: int64
+              quantity:
+                type: integer
+                minimum: 1
+          minitems: 1
+        status:
+          type: string
+          enum: [pending, shipped, delivered]
+      required:
+        - id
+        - customer_id
+        - items
+        - status
+
+    orderinput:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              product_id:
+                type: integer
+                format: int64
+              quantity:
+                type: integer
+                minimum: 1
+          minitems: 1
+      required:
+        - customer_id
+        - items

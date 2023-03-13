@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ethanlee1
+spec:
+  profile:
+    displayname: ethan lee
+    email: ethan_lee1@example.com
+    picture: https://i.pravatar.cc/150?img=36
+
+  memberOf: [team-shipping-integration]

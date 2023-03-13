@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jacksonwang1
+spec:
+  profile:
+    displayname: jackson wang
+    email: jackson_wang1@example.com
+    picture: https://i.pravatar.cc/150?img=21
+
+  memberOf: [team-shipping-mangement]

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: isabellamartinez1
+spec:
+  profile:
+    displayname: isabella martinez
+    email: isabella_martinez1@example.com
+    picture: https://i.pravatar.cc/150?img=18
+
+  memberOf: [team-customer-data-management]

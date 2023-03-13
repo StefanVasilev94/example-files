@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: gracezhao1
+spec:
+  profile:
+    displayname: grace zhao
+    email: grace_zhao1@example.com
+    picture: https://i.pravatar.cc/150?img=37
+
+  memberOf: [team-shipping-integration]

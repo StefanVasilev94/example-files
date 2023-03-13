@@ -1,0 +1,144 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: shipping-providers-api
+  description: api for accessing shipping providers' services.
+  annotations:
+    backstage.io/source-location: url:<source_url>
+
+spec:
+  type: openapi
+  lifecycle: <lifecycle>
+  owner: team-shipping-mangement
+  system: shipping
+  definition: |
+openapi: 3.0.0
+info:
+  title: shipping provider api
+  version: 1.0.0
+  description: an api for interacting with shipping providers
+
+paths:
+  /shipping_providers:
+    get:
+      summary: retrieve a list of available shipping providers
+      operationid: getshippingproviders
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/shippingprovider'
+
+  /shipping_providers/{provider_id}/shipments:
+    post:
+      summary: create a new shipment with a specific provider
+      operationid: createshipmentwithprovider
+      parameters:
+        - name: provider_id
+          in: path
+          required: true
+          description: id of the shipping provider
+          schema:
+            type: integer
+            format: int64
+      requestbody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipmentinput'
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipment'
+        '400':
+          description: bad request
+
+components:
+  schemas:
+    shippingprovider:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+      required:
+        - id
+        - name
+
+    shipment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        provider_id:
+          type: integer
+          format: int64
+        order_id:
+          type: integer
+          format: int64
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+          required:
+            - street
+            - city
+            - state
+            - zip
+        tracking_number:
+          type: string
+      required:
+        - id
+        - provider_id
+        - order_id
+        - address
+
+    shipmentinput:
+      type: object
+      properties:
+        provider_id:
+          type: integer
+          format: int64
+        order_id:
+          type: integer
+          format: int64
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+          required:
+            - street
+            - city
+            - state
+            - zip
+      required:
+        - provider_id
+        - order_id
+        - address

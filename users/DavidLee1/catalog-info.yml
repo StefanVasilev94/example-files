@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: davidlee1
+spec:
+  profile:
+    displayname: david lee
+    email: david_lee1@example.com
+    picture: https://i.pravatar.cc/150?img=5
+
+  memberOf: [team-order-processing]

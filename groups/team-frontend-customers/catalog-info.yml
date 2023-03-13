@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-frontend-customers
+  description: responsible for the customers frontend
+spec:
+  type: team
+
+  parent: team-frontend
+  children: []
+  members: [EthanZhang1, AveryLee1, SofiaGonzalez1, JoshuaWu1]

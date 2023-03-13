@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: daniellee1
+spec:
+  profile:
+    displayname: daniel lee
+    email: daniel_lee1@example.com
+    picture: https://i.pravatar.cc/150?img=13
+
+  memberOf: [team-product-management]

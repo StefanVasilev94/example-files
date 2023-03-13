@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: customers-db
+  description: database for storing customer data.
+spec:
+  type: database
+  owner: team-order-processing
+  system: order-management

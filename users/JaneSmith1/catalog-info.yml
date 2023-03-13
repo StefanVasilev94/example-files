@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: janesmith1
+spec:
+  profile:
+    displayname: jane smith
+    email: jane_smith1@example.com
+    picture: https://i.pravatar.cc/150?img=2
+
+  memberOf: [team-order-processing]

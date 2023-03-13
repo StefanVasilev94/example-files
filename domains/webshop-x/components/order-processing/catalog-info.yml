@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: order-processing
+  description: the component responsible for processing orders.
+
+   
+
+
+spec:
+  type: service
+  system: order-management
+  lifecycle: production
+  owner: team-order-processing
+  dependsOn:
+    - resource:default/orders-db
+    - resource:default/customers-db
+
+  providesApis:
+    - orders-api
+    - payment-gateway-api

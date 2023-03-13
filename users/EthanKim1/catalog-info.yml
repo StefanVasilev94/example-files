@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ethankim1
+spec:
+  profile:
+    displayname: ethan kim
+    email: ethan_kim1@example.com
+    picture: https://i.pravatar.cc/150?img=15
+
+  memberOf: [team-product-management]

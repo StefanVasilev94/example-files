@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: order-management
+  description: a system for managing orders placed on the webshop.
+spec:
+  owner: team-order-management
+  domain: <domain>

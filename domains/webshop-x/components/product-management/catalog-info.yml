@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: product-management
+  description: the component responsible for managing products.
+
+   
+
+
+spec:
+  type: service
+  system: product-catalog
+  lifecycle: production
+  owner: team-product-management
+  dependsOn:
+    - resource:default/products-db
+    - resource:default/product-images-db
+
+  providesApis:
+    - products-api

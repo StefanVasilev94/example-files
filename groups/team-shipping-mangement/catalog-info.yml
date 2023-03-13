@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-shipping-mangement
+  description: responsible for shipping management
+spec:
+  type: team
+
+  parent: team-shipping
+  children: []
+  members: [LiamNg1, EmmaTan1, JacksonWang1, AriaKim1, MiaChen1, LukeHernandez1]

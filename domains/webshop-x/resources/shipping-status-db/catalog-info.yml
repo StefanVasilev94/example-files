@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: shipping-status-db
+  description: database for storing shipping and delivery status.
+spec:
+  type: database
+  owner: team-shipping-mangement
+  system: shipping

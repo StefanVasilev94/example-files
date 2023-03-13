@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-product-management
+  description: responsible for product management
+spec:
+  type: team
+
+  parent: team-product-catalog
+  children: []
+  members: [DavidChen1, SamanthaKim1, DanielLee1, GraceWong1, EthanKim1]

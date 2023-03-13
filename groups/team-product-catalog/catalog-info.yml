@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-product-catalog
+  description: responsible for product catalog
+spec:
+  type: team
+
+  parent: team-webshop-x
+  children: [team-product-management]

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: emmatan1
+spec:
+  profile:
+    displayname: emma tan
+    email: emma_tan1@example.com
+    picture: https://i.pravatar.cc/150?img=20
+
+  memberOf: [team-shipping-mangement]

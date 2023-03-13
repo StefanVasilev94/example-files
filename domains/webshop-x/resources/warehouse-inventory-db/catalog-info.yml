@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: warehouse-inventory-db
+  description: inventory of available products in the warehouse.
+spec:
+  type: database
+  owner: team-order-fulfillment
+  system: order-management

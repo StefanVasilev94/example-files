@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: davidchen1
+spec:
+  profile:
+    displayname: david chen
+    email: david_chen1@example.com
+    picture: https://i.pravatar.cc/150?img=11
+
+  memberOf: [team-product-management]

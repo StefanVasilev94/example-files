@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-customer-data-management
+  description: responsible for customer data management
+spec:
+  type: team
+
+  parent: team-customer-management
+  children: []
+  members: [SophieMendoza1, LucasGomez1, IsabellaMartinez1]
