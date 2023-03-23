@@ -5,4 +5,4 @@ metadata:
   description: a system for managing products available on the webshop.
 spec:
   owner: team-product-catalog
-  domain: <domain>
+  domain: test
