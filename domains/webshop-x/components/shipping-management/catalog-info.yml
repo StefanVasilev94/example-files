@@ -11,7 +11,7 @@ spec:
   type: service
   system: shipping
   lifecycle: production
-  owner: team-shipping-mangement
+  owner: team-enablement
   dependsOn:
     - resource:default/shipping-status-db
 
