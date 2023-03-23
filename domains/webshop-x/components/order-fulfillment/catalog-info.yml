@@ -11,7 +11,7 @@ spec:
   type: service
   system: product-catalog
   lifecycle: production
-  owner: team-order-fulfillment
+  owner: team-enablement
   dependsOn:
     - resource:default/warehouse-inventory-db
 
