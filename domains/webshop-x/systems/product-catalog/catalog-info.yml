@@ -4,5 +4,5 @@ metadata:
   name: product-catalog
   description: a system for managing products available on the webshop.
 spec:
-  owner: team-product-catalog
+  owner: team-enablement
   domain: test
