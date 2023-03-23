@@ -11,7 +11,7 @@ spec:
   type: service
   system: order-management
   lifecycle: production
-  owner: team-order-processing
+  owner: team-enablement
   dependsOn:
     - resource:default/orders-db
     - resource:default/customers-db
