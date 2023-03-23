@@ -9,7 +9,7 @@ metadata:
 
 spec:
   type: service
-  system: order-management
+  system: product-catalog
   lifecycle: production
   owner: team-order-fulfillment
   dependsOn:
