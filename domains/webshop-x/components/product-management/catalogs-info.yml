@@ -11,7 +11,7 @@ spec:
   type: service
   system: product-catalog
   lifecycle: production
-  owner: team-product-management
+  owner: team-enablement
   dependsOn:
     - resource:default/products-db
     - resource:default/product-images-db
