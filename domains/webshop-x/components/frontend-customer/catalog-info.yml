@@ -11,7 +11,7 @@ spec:
   type: website
   system: frontend
   lifecycle: production
-  owner: team-frontend-customer
+  owner: team-enablement
   dependsOn:
     <dependsOn>
   providesApis:
