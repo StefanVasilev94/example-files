@@ -11,8 +11,4 @@ spec:
   type: service
   system: frontend
   lifecycle: production
-  owner: team-customer-mangement-integration
-  dependsOn:
-    <dependsOn>
-  providesApis:
-    - customers-api
+  owner: team-toremove
