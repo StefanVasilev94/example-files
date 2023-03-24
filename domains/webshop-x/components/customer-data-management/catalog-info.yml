@@ -11,9 +11,3 @@ spec:
   type: service
   system: customer-management
   lifecycle: production
-  owner: team-customer-data-management
-  dependsOn:
-    - resource:default/customers-db
-
-  providesApis:
-    - customers-api
